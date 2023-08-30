@@ -40,9 +40,16 @@ const manifest: chrome.runtime.ManifestV3 = {
         "assets/css/*.css",
         "icon-128.png",
         "icon-34.png",
+        "xhook.min.js"
       ],
       matches: ["*://*/*"],
     },
+    {
+      resources: [
+        "src/pages/inject/index.js"
+      ],
+      matches: ["*://*/*"]
+    }
   ],
 };
 
