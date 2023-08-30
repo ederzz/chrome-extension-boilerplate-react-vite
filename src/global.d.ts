@@ -35,3 +35,10 @@ declare module "*.json" {
   const content: string;
   export default content;
 }
+
+declare global {
+  interface Window {
+    /** xml http request hooks */
+    xhook: any;
+  }
+}
