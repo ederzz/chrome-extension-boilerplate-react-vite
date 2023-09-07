@@ -1,5 +1,5 @@
 // import "./xhook";
-
+// 注入 manifest/web_accessible_resources/xx.js到页面中
 function injectScript(path: string, st: string) {
   const node = document.querySelector(st);
   const script = document.createElement("script");

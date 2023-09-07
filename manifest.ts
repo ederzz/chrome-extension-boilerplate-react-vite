@@ -46,7 +46,8 @@ const manifest: chrome.runtime.ManifestV3 = {
     },
     {
       resources: [
-        "src/pages/inject/index.js"
+        "src/pages/inject/index.js",
+        "src/pages/vmIntercept/index.js"
       ],
       matches: ["*://*/*"]
     }

@@ -7,3 +7,4 @@ import './inject-scripts';
  */
 import("./components/Demo");
 import './message';
+import './vm-override-mount';
