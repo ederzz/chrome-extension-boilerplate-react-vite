@@ -1,20 +1,20 @@
 Arguments: 
-  E:\nvm_nodejs\node.exe C:\Users\axi\AppData\Local\Yarn\Data\global\node_modules\yarn\bin\yarn.js
+  D:\software\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Users\axi\.oh-my-posh;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe;C:\Users\axi\.oh-my-posh;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe;C:\Users\axi\.oh-my-posh;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe;C:\Users\axi\AppData\Local\Yarn\bin;C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;Git\cmd;C:\Program Files\dotnet\;golang\bin;C:\Users\axi\Desktop\shell;E:\nvm;E:\nvm_nodejs;E:\nvm\v12.22.4;E:\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Bandizip\;;E:\微信web开发者工具\dll;E:\;C:\Users\axi\AppData\Local\Yarn\bin;C:\Users\axi\scoop\apps\gcc\current\bin;C:\Users\axi\scoop\shims;C:\Users\axi\AppData\Local\Microsoft\WindowsApps;F:\Microsoft VS Code\bin;C:\Users\axi\go\bin;C:\Users\axi\Desktop\shell;E:\nvm;E:\nvm_nodejs;E:\nvm\v16.14.2;E:\QQgame\Hall.57773\;E:\;C:\Users\axi\AppData\Roaming\npm
+  D:\software\Git\mingw64\bin;D:\software\Git\usr\bin;C:\Users\admin\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;Git\cmd;Git\cmd;D:\software\nvm;D:\software\nodejs;D:\software\Microsoft VS Code\bin;D:\software\cmder\vendor;D:\software\lua\Binaries-LuaDist-batteries-0.9.8-Windows-x86\bin;D:\software;D:\software\Python;C:\Program Files\dotnet;D:\software\微信web开发者工具\dll;D:\software\mingw\bin;C:\Users\admin\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\admin\AppData\Local\Programs\Python\Python311;C:\Users\admin\scoop\shims;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Roaming\npm;D:\software\Fiddler;D:\software\CLion 2023.1.4\bin
 
 Yarn version: 
-  1.22.19
+  1.22.10
 
 Node version: 
-  16.20.1
+  16.14.2
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: EEXIST: file already exists, mkdir 'H:\git_pro\chrome-extension-boilerplate-react-vite\node_modules\@typescript-eslint\parser\node_modules\@typescript-eslint'
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\admin\AppData\Local\Yarn\Cache\v6\npm-find-up-5.0.0-4c92819ecb7083561e4f4a240a86be5198f536fc-integrity\node_modules\find-up\index.d.ts' -> 'D:\qunhe_ws\chrome-extension-boilerplate-react-vite\node_modules\eslint\node_modules\find-up\index.d.ts'
 
 npm manifest: 
   {
@@ -40,15 +40,16 @@ npm manifest:
     "type": "module",
     "dependencies": {
       "construct-style-sheets-polyfill": "^3.1.0",
+      "proxy-deep": "^3.1.1",
       "react": "18.2.0",
       "react-dom": "18.2.0"
     },
     "devDependencies": {
+      "@rollup/plugin-typescript": "^8.5.0",
+      "@testing-library/react": "13.4.0",
       "@twind/core": "^1.1.3",
       "@twind/preset-autoprefix": "^1.0.7",
       "@twind/preset-tailwind": "^1.1.4",
-      "@rollup/plugin-typescript": "^8.5.0",
-      "@testing-library/react": "13.4.0",
       "@types/chrome": "0.0.224",
       "@types/jest": "29.0.3",
       "@types/node": "18.15.11",

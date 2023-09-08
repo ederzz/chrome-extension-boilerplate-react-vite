@@ -10,4 +10,5 @@ function injectScript(path: string, st: string) {
 }
 
 injectScript(chrome.runtime.getURL("xhook.min.js"), "head");
-injectScript(chrome.runtime.getURL("src/pages/inject/index.js"), "head");
+injectScript(chrome.runtime.getURL("src/pages/headScript/index.js"), "head");
+injectScript(chrome.runtime.getURL("src/pages/bodyScript/index.js"), "body");
