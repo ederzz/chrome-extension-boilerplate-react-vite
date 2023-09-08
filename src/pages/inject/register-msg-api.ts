@@ -1,3 +1,4 @@
+
 export interface IMiniappRegistrationInfo {
   /**
    * 小程序唯一id
@@ -115,7 +116,7 @@ export function registryVmApiForRpc(manager: IManager) {
         namespace: '_mpDevtool_',
         value: {
           __sendMessage(data: any) {
-            console.log('eder data', data)
+            post2ContentScript(data);
           },
           __receiveMessage(fn: (data: any) => any) {
           },
@@ -283,3 +284,20 @@ if (typeof (window as any).pubCmnPackages !== 'undefined') {
   const appManager = getMiniAppManager()
   registryVmApiForRpc(appManager);
 }
+let div = document.querySelector('#edereder');
+
+// @warning 使用window.postMessage发送数据不能注册到IDP API中
+function post2ContentScript(data) {
+  try {
+    if (!div) div = document.querySelector('#edereder');
+    div.setAttribute('data', JSON.stringify(data));
+    (div as any).click();
+  } catch (error) {
+    console.log('eder post message to content failed', error);
+  }
+}
+
+// receive message from content
+// window.addEventListener('message', evt => {
+//   console.log('eder page', evt.data)
+// });
