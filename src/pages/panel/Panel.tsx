@@ -24,24 +24,18 @@ const getActiveTab = (callback) => {
 
 const Panel: React.FC = () => {
   const [msgs, setMsgs] = useState([]);
-  const [tabId, setTabId] = useState<string | number>('tabId');
+  const [tabId, setTabId] = useState<string | number>(chrome.devtools.inspectedWindow.tabId);
   useEffect(() => {
-    function init(id: number) {
-      const bgConnection = chrome.runtime.connect({
-        name: id ? id.toString() : undefined,
-      });
-      bgConnection.onMessage.addListener(
-        msg => {
-          setMsgs(prev => ([...prev, ({ msg, mark: 'eder' })]));
-        }
-      );
-    }
+    var backgroundPageConnection = chrome.runtime.connect({
+      name: "panel"
+    });
 
-    init(chrome.devtools.inspectedWindow.tabId);
-
-    chrome.runtime.onMessage.addListener(function (msg, sender, response) {
+    backgroundPageConnection.postMessage({
+      name: 'init',
+      tabId: 'chrome.devtools.inspectedWindow.tabId'
+    });
+    backgroundPageConnection.onMessage.addListener((msg, port) => {
       setMsgs(prev => ([...prev, msg]));
-      response();
     });
   }, []);
   return (
@@ -50,7 +44,11 @@ const Panel: React.FC = () => {
       <h1>{tabId}</h1>
       <div>
         {
-          msgs.map(d => JSON.stringify(d))
+          msgs.map(d => {
+            return (
+              <div>{d.ns}</div>
+            );
+          })
         }
       </div>
     </div>

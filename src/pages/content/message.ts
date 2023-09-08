@@ -6,6 +6,7 @@ function postToPageScript(message: any) {
 
 /** send message to ext-otherpart from content-script */
 function post2devtool(message: any) {
+  console.log('eder content send', message)
   chrome.runtime.sendMessage(message, resp=> {
     console.log('eder content resp', resp)
   });

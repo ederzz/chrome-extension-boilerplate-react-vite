@@ -1,6 +1,6 @@
 try {
   chrome.devtools.panels.create(
-    "Dev Tools",
+    "K-miniapp",
     "icon-34.png",
     "src/pages/panel/index.html"
   );
