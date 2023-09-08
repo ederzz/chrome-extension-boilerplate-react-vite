@@ -1,0 +1,55 @@
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($font-size, $line-height, $font-weight, $color) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin flex-vt-center() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin hide-scrollbar() {
+  &::-webkit-scrollbar-track {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@mixin scrollbar($width, $btnColor, $backColor) {
+  ::-webkit-scrollbar {
+    width: $width;
+    background-color: $backColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $btnColor;
+  }
+}
+
+@mixin absolute-lt($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin flex-column-center() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin oneline-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

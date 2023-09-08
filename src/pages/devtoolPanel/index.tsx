@@ -1,5 +1,4 @@
-import Panel from "@pages/panel/Panel";
-import "@pages/panel/index.css";
+import Panel from "@root/src/pages/devtoolPanel/Panel";
 import { attachTwindStyle } from "@src/shared/style/twind";
 import { createRoot } from "react-dom/client";
 import refreshOnUpdate from "virtual:reload-on-update-in-view";

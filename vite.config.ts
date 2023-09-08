@@ -49,7 +49,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         devtools: resolve(pagesDir, "devtools", "index.html"),
-        panel: resolve(pagesDir, "panel", "index.html"),
+        devtoolPanel: resolve(pagesDir, "devtoolPanel", "index.html"),
         content: resolve(pagesDir, "content", "index.ts"),
         headScript: resolve(pagesDir, "inject", "head-scripts.ts"),
         bodyScript: resolve(pagesDir, "inject", "body-scripts.ts"),

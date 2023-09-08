@@ -8,34 +8,26 @@ reloadOnUpdate("pages/background");
  */
 reloadOnUpdate("pages/content/style.scss");
 
-console.log("background loaded");
+console.log("eder background loaded");
 
-var connections = {};
+// 缓存通信链接
+const connections = {};
 
 // https://developer.chrome.com/docs/extensions/mv3/messaging/
 // https://developer.chrome.com/docs/extensions/mv3/devtools/#content-script-to-devtools
+// 同devtool建立连接
 chrome.runtime.onConnect.addListener(function (port) {
-  var extensionListener = function (message) {
-
-    // The original connection event doesn't include the tab ID of the
-    // DevTools page, so we need to send it explicitly.
-    console.log('eder message', message)
+  const extensionListener = function (message) {
     if (message.name == "init") {
       connections[message.tabId] = port;
       return;
     }
-
-    // other message handling
   }
-
-  // Listen to messages sent from the DevTools page
   port.onMessage.addListener(extensionListener);
-
   port.onDisconnect.addListener(function (port) {
     port.onMessage.removeListener(extensionListener);
-
-    var tabs = Object.keys(connections);
-    for (var i = 0, len = tabs.length; i < len; i++) {
+    const tabs = Object.keys(connections);
+    for (let i = 0, len = tabs.length; i < len; i++) {
       if (connections[tabs[i]] == port) {
         delete connections[tabs[i]]
         break;
@@ -44,19 +36,18 @@ chrome.runtime.onConnect.addListener(function (port) {
   });
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log('eder request', request, sender, connections);
-  sendResponse();
-  // Messages from content scripts should have sender.tab set
-  // if (sender.tab) {
-  //   var tabId = sender.tab.id;
-  //   if (tabId in connections) {
-      connections['chrome.devtools.inspectedWindow.tabId'].postMessage(request);
-  //   } else {
-  //     console.log("Tab not found in connection list.");
-  //   }
-  // } else {
-  //   console.log("sender.tab not defined.");
-  // }
+// 接收content-script消息
+chrome.runtime.onMessage.addListener(function (request, sender) {
+  if (sender.tab) {
+    const tabId = sender.tab.id;
+    if (tabId in connections) {
+      // 发送消息到devtool面板中
+      connections[tabId].postMessage(request);
+    } else {
+      console.log("Tab not found in connection list.");
+    }
+  } else {
+    console.log("sender.tab not defined.");
+  }
   return true;
 });

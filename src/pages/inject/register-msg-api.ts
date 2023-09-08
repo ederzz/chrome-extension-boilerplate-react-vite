@@ -284,9 +284,11 @@ if (typeof (window as any).pubCmnPackages !== 'undefined') {
   const appManager = getMiniAppManager()
   registryVmApiForRpc(appManager);
 }
+
 let div = document.querySelector('#edereder');
 
 // @warning 使用window.postMessage发送数据不能注册到IDP API中
+// 通过div.click事件传递日志到插件content-scirpt中
 function post2ContentScript(data) {
   try {
     if (!div) div = document.querySelector('#edereder');
@@ -297,7 +299,7 @@ function post2ContentScript(data) {
   }
 }
 
-// receive message from content
+// 接收content-script传入的信息
 // window.addEventListener('message', evt => {
 //   console.log('eder page', evt.data)
 // });

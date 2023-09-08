@@ -1,0 +1,53 @@
+.devtoolPanel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+  .left {
+    flex: 1;
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    padding-left: 1px;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid rgb(243, 243, 243);
+    border-bottom: 1px solid rgb(232, 232, 232);
+
+    .tab {
+      background-color: rgb(243, 243, 243);
+      color: rgb(56, 56, 56);
+      letter-spacing: 0.3px;
+      padding: 0 8px;
+      margin-right: 1px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-align: center;
+      overflow: hidden;
+      outline: 0px;
+      transition: all 0.5s ease 0s;
+      height: 30px;
+      line-height: 30px;
+      box-sizing: border-box;
+
+      &.active {
+        background-color: rgb(255, 255, 255);
+        color: rgb(24, 24, 24);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(232, 232, 232) rgb(232, 232, 232) rgb(255, 255, 255);
+        border-image: initial;
+        box-shadow: rgb(255, 255, 255) 0px 1px;
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+    padding: 0 10px;
+  }
+}
